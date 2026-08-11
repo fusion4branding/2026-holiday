@@ -19,7 +19,7 @@
     .snowfall{position:fixed;inset:0;pointer-events:none;z-index:30;overflow:hidden}.snowflake{position:absolute;top:-10vh;color:#fff;text-shadow:0 0 9px #fff;animation:fall linear infinite;opacity:.82}@keyframes fall{to{transform:translate3d(var(--drift),115vh,0) rotate(360deg)}}
     .topbar{position:sticky;top:0;z-index:25;background:rgba(8,40,63,.93);backdrop-filter:blur(12px);color:#fff;border-bottom:1px solid rgba(255,255,255,.1)}
     .nav{width:min(1180px,calc(100% - 32px));margin:auto;display:flex;align-items:center;justify-content:space-between;padding:10px 0}.brand{display:flex;align-items:center;text-decoration:none}.holiday-logo{display:block;width:auto;height:64px;max-width:min(520px,58vw);object-fit:contain;filter:drop-shadow(0 5px 12px rgba(0,0,0,.2))}
-    .nav-links{display:flex;gap:18px;align-items:center}.nav-links a{text-decoration:none;font-weight:700;font-size:.94rem}.nav-cta{background:var(--red);padding:10px 17px;border-radius:999px}.sound-toggle{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.10);color:#fff;border-radius:999px;padding:9px 13px;font-weight:800;cursor:pointer;transition:.2s ease}.sound-toggle:hover{background:rgba(255,255,255,.18);transform:translateY(-1px)}.sound-toggle[aria-pressed="true"]{background:#fff;color:var(--navy)}.sound-icon{font-size:1rem}
+    .nav-links{display:flex;gap:26px;align-items:center}.nav-links a{text-decoration:none;font-weight:700;font-size:.94rem}.nav-cta{background:var(--red);padding:10px 17px;border-radius:999px}
     .hero{position:relative;min-height:780px;display:grid;align-items:center;overflow:hidden;background:linear-gradient(180deg,#0b3858 0%,#1c6486 48%,#91cbe0 78%,#effaff 100%)}
     .aurora{position:absolute;inset:0;background:radial-gradient(ellipse at 18% 18%,rgba(168,255,219,.18),transparent 35%),radial-gradient(ellipse at 78% 22%,rgba(218,191,255,.15),transparent 32%);mix-blend-mode:screen;animation:aurora 7s ease-in-out infinite alternate}@keyframes aurora{to{transform:translateY(14px) scale(1.03);opacity:.75}}
     .stars{position:absolute;inset:0;background-image:radial-gradient(circle,#fff 0 1px,transparent 1.5px),radial-gradient(circle,#fff 0 1.5px,transparent 2px);background-size:90px 90px,150px 150px;background-position:0 0,30px 20px;opacity:.45;animation:twinkle 3s ease-in-out infinite alternate}@keyframes twinkle{to{opacity:.75}}
@@ -41,13 +41,13 @@
     .contact-form{position:relative;background:#fff;color:var(--ink);padding:58px 44px 44px}.contact-form:before{content:"Holiday Workshop Request";display:block;font-family:"Mountains of Christmas",cursive;color:var(--navy);font-size:2.3rem;margin-bottom:22px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}label{font-weight:800;font-size:.9rem}input,select,textarea{width:100%;border:1px solid #d7e1e8;border-radius:14px;padding:13px 14px;background:#fbfdff;outline:none}input:focus,select:focus,textarea:focus{border-color:#4d9aba;box-shadow:0 0 0 4px rgba(77,154,186,.13)}textarea{min-height:125px;resize:vertical}.form-note{font-size:.82rem;color:var(--muted);margin:12px 0 0}
     footer{background:var(--navy);color:#dcebf3;padding:30px 16px;text-align:center}
     @media (max-width:900px){.nav-links a:not(.nav-cta){display:none}.hero{min-height:auto}.hero-inner{grid-template-columns:1fr;padding-top:60px}.hero-art{min-height:430px}.catalog-grid{grid-template-columns:repeat(2,1fr)}.cabin{grid-template-columns:1fr}.tree-line{opacity:.55}}
-    @media (max-width:620px){.sound-label{display:none}.sound-toggle{padding:9px 11px}.catalog-grid{grid-template-columns:1fr}.hero-art{transform:scale(.82);margin:-35px -50px -20px}.form-grid{grid-template-columns:1fr}.cabin-copy,.contact-form{padding:42px 24px}.cabin-copy h2{font-size:3.2rem}.holiday-logo{height:50px;max-width:68vw}.workshop-sign{width:260px}}
+    @media (max-width:620px){.catalog-grid{grid-template-columns:1fr}.hero-art{transform:scale(.82);margin:-35px -50px -20px}.form-grid{grid-template-columns:1fr}.cabin-copy,.contact-form{padding:42px 24px}.cabin-copy h2{font-size:3.2rem}.holiday-logo{height:50px;max-width:68vw}.workshop-sign{width:260px}}
     @media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
   </style>
 </head>
 <body>
   <div class="snowfall" id="snowfall" aria-hidden="true"></div>
-  <header class="topbar"><nav class="nav" aria-label="Primary navigation"><a class="brand" href="#top" aria-label="Fusion4Branding home"><img class="holiday-logo" src="images/fusion4-holiday-logo.png" alt="Fusion4Branding holiday logo"></a><div class="nav-links"><a href="#catalogs">Gift Catalogs</a><button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false" aria-label="Turn holiday sounds on"><span class="sound-icon" aria-hidden="true">🔇</span><span class="sound-label">Sound</span></button><a href="#contact" class="nav-cta">Contact Us</a></div></nav></header>
+  <header class="topbar"><nav class="nav" aria-label="Primary navigation"><a class="brand" href="#top" aria-label="Fusion4Branding home"><img class="holiday-logo" src="images/fusion4-holiday-logo.png" alt="Fusion4Branding holiday logo"></a><div class="nav-links"><a href="#catalogs">Gift Catalogs</a><a href="#contact" class="nav-cta">Contact Us</a></div></nav></header>
 
   <section class="hero" id="top">
     <div class="aurora"></div><div class="stars"></div><div class="mountains"></div>
@@ -83,35 +83,85 @@
     const snow=document.getElementById('snowfall'),flakes=['❄','❅','✦','•'];
     for(let i=0;i<62;i++){const f=document.createElement('span');f.className='snowflake';f.textContent=flakes[Math.floor(Math.random()*flakes.length)];f.style.left=Math.random()*100+'vw';f.style.fontSize=(Math.random()*17+8)+'px';f.style.animationDuration=(Math.random()*9+8)+'s';f.style.animationDelay=(-Math.random()*14)+'s';f.style.setProperty('--drift',(Math.random()*170-85)+'px');snow.appendChild(f)}
 
-    // Optional holiday soundscape. Browsers require a user gesture before audio can start,
-    // so sound is OFF by default and only begins after the visitor presses the sound button.
-    let audioCtx=null, soundOn=false, ambientTimer=null;
-    const soundToggle=document.getElementById('soundToggle');
+    // Holiday soundscape: soft music-box ambience with occasional bell chimes.
+    // Modern browsers block audible autoplay until the visitor interacts with the page.
+    // We try immediately, then start automatically on the visitor's first click/tap/key press.
+    let audioCtx=null, ambienceStarted=false, melodyTimer=null, bellTimer=null;
+    const melody=[
+      659.25,783.99,880.00,783.99,
+      698.46,830.61,987.77,830.61,
+      659.25,783.99,1046.50,987.77,
+      880.00,783.99,698.46,783.99
+    ];
+    let melodyStep=0;
+
     function ensureAudio(){
-      if(!audioCtx){audioCtx=new (window.AudioContext||window.webkitAudioContext)()}
-      if(audioCtx.state==='suspended') audioCtx.resume();
+      if(!audioCtx) audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+      return audioCtx.state==='suspended' ? audioCtx.resume() : Promise.resolve();
     }
-    function tone(freq=880,duration=.18,volume=.035,type='sine',delay=0){
-      if(!soundOn||!audioCtx) return;
-      const now=audioCtx.currentTime+delay, osc=audioCtx.createOscillator(), gain=audioCtx.createGain();
-      osc.type=type; osc.frequency.setValueAtTime(freq,now);
-      gain.gain.setValueAtTime(0,now); gain.gain.linearRampToValueAtTime(volume,now+.018); gain.gain.exponentialRampToValueAtTime(.0001,now+duration);
-      osc.connect(gain); gain.connect(audioCtx.destination); osc.start(now); osc.stop(now+duration+.03);
+
+    function playTone(freq,duration=.55,volume=.009,type='sine',delay=0){
+      if(!audioCtx || audioCtx.state!=='running') return;
+      const now=audioCtx.currentTime+delay;
+      const osc=audioCtx.createOscillator();
+      const gain=audioCtx.createGain();
+      osc.type=type;
+      osc.frequency.setValueAtTime(freq,now);
+      gain.gain.setValueAtTime(.0001,now);
+      gain.gain.exponentialRampToValueAtTime(volume,now+.025);
+      gain.gain.exponentialRampToValueAtTime(.0001,now+duration);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(now);
+      osc.stop(now+duration+.04);
     }
-    function bell(){tone(1046.5,.45,.027,'sine',0);tone(1318.5,.52,.021,'sine',.08);tone(1568,.58,.017,'sine',.17)}
-    function softClick(){tone(659.3,.11,.022,'triangle',0);tone(880,.12,.015,'sine',.045)}
-    function scheduleAmbient(){
-      clearTimeout(ambientTimer);
-      if(!soundOn) return;
-      ambientTimer=setTimeout(()=>{bell();scheduleAmbient()},12000+Math.random()*9000);
+
+    function musicBoxNote(){
+      const note=melody[melodyStep++ % melody.length];
+      playTone(note,.72,.008,'sine');
+      playTone(note*2,.28,.0025,'triangle',.015);
+      // A very quiet low harmony keeps the background warm without becoming busy.
+      if(melodyStep % 4===1) playTone(note/2,1.2,.003,'sine');
     }
-    soundToggle.addEventListener('click',()=>{
-      if(!soundOn){ensureAudio();soundOn=true;soundToggle.setAttribute('aria-pressed','true');soundToggle.querySelector('.sound-icon').textContent='🔊';soundToggle.setAttribute('aria-label','Turn holiday sounds off');bell();scheduleAmbient()}
-      else{soundOn=false;soundToggle.setAttribute('aria-pressed','false');soundToggle.querySelector('.sound-icon').textContent='🔇';soundToggle.setAttribute('aria-label','Turn holiday sounds on');clearTimeout(ambientTimer)}
+
+    function holidayBell(){
+      playTone(1046.5,.55,.012,'sine',0);
+      playTone(1318.5,.62,.009,'sine',.09);
+      playTone(1568.0,.72,.006,'sine',.19);
+    }
+
+    function softClick(){
+      playTone(659.25,.12,.012,'triangle');
+      playTone(880,.14,.007,'sine',.045);
+    }
+
+    function startAmbience(){
+      if(ambienceStarted) return;
+      ensureAudio().then(()=>{
+        if(ambienceStarted || audioCtx.state!=='running') return;
+        ambienceStarted=true;
+        musicBoxNote();
+        melodyTimer=setInterval(musicBoxNote,1150);
+        bellTimer=setInterval(holidayBell,18000);
+        setTimeout(holidayBell,3500);
+      }).catch(()=>{});
+    }
+
+    // Attempt autoplay. If the browser blocks it, the first normal interaction starts it invisibly.
+    startAmbience();
+    ['pointerdown','touchstart','keydown'].forEach(evt=>{
+      document.addEventListener(evt,startAmbience,{once:true,passive:true});
     });
+
+    document.addEventListener('visibilitychange',()=>{
+      if(!audioCtx) return;
+      if(document.hidden && audioCtx.state==='running') audioCtx.suspend();
+      else if(!document.hidden && ambienceStarted) audioCtx.resume();
+    });
+
     document.querySelectorAll('.catalog-card').forEach(card=>{
-      card.addEventListener('mouseenter',()=>{if(soundOn) tone(1174.7,.12,.012,'sine')});
-      card.addEventListener('click',()=>{if(soundOn) softClick()});
+      card.addEventListener('mouseenter',()=>{if(ambienceStarted) playTone(1174.7,.13,.005,'sine')});
+      card.addEventListener('click',()=>{if(ambienceStarted) softClick()});
     });
 
     document.getElementById('year').textContent=new Date().getFullYear();
