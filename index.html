@@ -41,7 +41,7 @@
 
 
     .contact-section{position:relative}.contact-section:before{content:"";position:absolute;left:0;right:0;top:20px;height:220px;background:linear-gradient(180deg,transparent,#eaf4ef);z-index:-1}.cabin{position:relative;background:linear-gradient(135deg,#6e3f26,#4f2c1b);border-radius:38px;overflow:hidden;box-shadow:0 30px 70px rgba(8,40,63,.25);display:grid;grid-template-columns:.9fr 1.1fr;color:#fff;border:10px solid #fff}.cabin:before{content:"";position:absolute;left:-5%;right:-5%;top:-38px;height:80px;background:#fff;border-radius:50%;box-shadow:0 12px 0 rgba(223,241,248,.8);z-index:2}.cabin-copy{position:relative;padding:70px 56px 58px;background:linear-gradient(rgba(8,40,63,.2),rgba(8,40,63,.28)),repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 2px,transparent 2px 48px)}.cabin-copy h2{font-family:"Mountains of Christmas",cursive;font-size:4rem;line-height:1;margin:0 0 18px}.cabin-copy p{line-height:1.75;color:#f6e9dc}.contact-details{margin-top:26px;display:grid;gap:13px}.contact-details a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.45);transition:.2s}.contact-details a:hover{color:#ffe2a0;border-bottom-color:#ffe2a0}.fireplace{margin-top:32px;width:210px;height:100px;border:9px solid #b17b56;border-bottom:0;border-radius:90px 90px 0 0;background:#2a1a16;position:relative}.fireplace:before{content:"🔥";position:absolute;left:50%;bottom:8px;transform:translateX(-50%);font-size:52px;filter:drop-shadow(0 0 16px #ffb14c)}
-    .contact-form{position:relative;background:#fff;color:var(--ink);padding:58px 44px 44px}.contact-form:before{content:"Holiday Workshop Request";display:block;font-family:"Mountains of Christmas",cursive;color:var(--navy);font-size:2.3rem;margin-bottom:22px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}label{font-weight:800;font-size:.9rem}input,select,textarea{width:100%;border:1px solid #d7e1e8;border-radius:14px;padding:13px 14px;background:#fbfdff;outline:none}input:focus,select:focus,textarea:focus{border-color:#4d9aba;box-shadow:0 0 0 4px rgba(77,154,186,.13)}textarea{min-height:125px;resize:vertical}.form-note{font-size:.82rem;color:var(--muted);margin:12px 0 0}
+    .contact-form{position:relative;background:#fff;color:var(--ink);padding:58px 44px 44px}.contact-form:before{content:"Holiday Workshop Request";display:block;font-family:"Mountains of Christmas",cursive;color:var(--navy);font-size:2.3rem;margin-bottom:22px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}label{font-weight:800;font-size:.9rem}input,select,textarea{width:100%;border:1px solid #d7e1e8;border-radius:14px;padding:13px 14px;background:#fbfdff;outline:none}input:focus,select:focus,textarea:focus{border-color:#4d9aba;box-shadow:0 0 0 4px rgba(77,154,186,.13)}textarea{min-height:125px;resize:vertical}.form-note{font-size:.82rem;color:var(--muted);margin:12px 0 0}.form-status{display:none;margin:14px 0 0;padding:12px 14px;border-radius:12px;font-size:.9rem;font-weight:700;line-height:1.45}.form-status.show{display:block}.form-status.success{background:#e8f7ee;color:#17633c;border:1px solid #b9e4ca}.form-status.error{background:#fff0f0;color:#9e2830;border:1px solid #efc2c5}.hp-field{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}.contact-form button[disabled]{opacity:.7;cursor:not-allowed;transform:none!important}
     footer{background:var(--navy);color:#dcebf3;padding:30px 16px;text-align:center}
     @media (max-width:900px){.nav-links a:not(.nav-cta){display:none}.hero{min-height:auto}.hero-inner{grid-template-columns:1fr;padding-top:60px}.hero-art{min-height:430px}.catalog-grid{grid-template-columns:repeat(2,1fr)}.cabin{grid-template-columns:1fr}.tree-line{opacity:.55}}
     @media (max-width:620px){.catalog-grid{grid-template-columns:1fr}.hero-art{transform:scale(.82);margin:-35px -50px -20px}.form-grid{grid-template-columns:1fr}.cabin-copy,.contact-form{padding:42px 24px}.cabin-copy h2{font-size:3.2rem}.holiday-logo{height:50px;max-width:68vw}.workshop-sign{width:260px}}
@@ -99,7 +99,18 @@
 <div>Reed Schonacher: <a href="mailto:Reed@fusion4branding.com"><strong>Reed@fusion4branding.com</strong></a></div>
 <div>📍 Fusion4Branding · Addison, Texas</div>
 </div><div aria-hidden="true" class="fireplace"></div></div>
-<form class="contact-form" id="holidayForm"><div class="form-grid"><div class="field"><label for="name">Name</label><input id="name" name="name" required=""/></div><div class="field"><label for="company">Company</label><input id="company" name="company"/></div><div class="field"><label for="email">Email</label><input id="email" name="email" required="" type="email"/></div><div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel"/></div><div class="field full"><label for="interest">How can we help?</label><select id="interest" name="interest"><option>Request product information</option><option>Request pricing</option><option>Plan a holiday gifting program</option><option>Schedule a call</option><option>Other</option></select></div><div class="field full"><label for="message">Tell us about your project</label><textarea id="message" name="message" placeholder="Estimated quantity, budget, preferred products, in-hands date, or any other details..."></textarea></div><div class="field full"><button class="btn btn-primary" type="submit">Send Holiday Gift Request</button><p class="form-note">We'll be in touch soon! Submit your holiday gifting request and a member of our team will follow up with you.</p></div></div></form>
+<form class="contact-form" id="holidayForm">
+<div class="form-grid">
+<div class="field"><label for="name">Name</label><input id="name" name="name" required=""/></div>
+<div class="field"><label for="company">Company</label><input id="company" name="company"/></div>
+<div class="field"><label for="email">Email</label><input id="email" name="email" required="" type="email"/></div>
+<div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel"/></div>
+<div class="hp-field" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off"/></div>
+<div class="field full"><label for="interest">How can we help?</label><select id="interest" name="interest"><option>Request product information</option><option>Request pricing</option><option>Plan a holiday gifting program</option><option>Schedule a call</option><option>Other</option></select></div>
+<div class="field full"><label for="message">Tell us about your project</label><textarea id="message" name="message" placeholder="Estimated quantity, budget, preferred products, in-hands date, or any other details..."></textarea></div>
+<div class="field full"><button class="btn btn-primary" id="holidaySubmitBtn" type="submit">Send Holiday Gift Request</button><p class="form-note">We'll be in touch soon! Submit your holiday gifting request and a member of our team will follow up with you.</p><div class="form-status" id="holidayFormStatus" role="status" aria-live="polite"></div></div>
+</div>
+</form>
 </div></section>
 </main>
 <footer>© <span id="year"></span> Fusion4Branding. Holiday gift ideas made memorable.</footer>
@@ -195,8 +206,51 @@
     });
 
     document.getElementById('year').textContent=new Date().getFullYear();
-alert('Catalog link placeholder — replace this URL when the final catalog link is provided.')}}));
-    document.getElementById('holidayForm').addEventListener('submit',e=>{e.preventDefault();alert('Thank you! This demo form is ready to be connected to the final contact email or CRM.')});
+
+    const holidayForm=document.getElementById('holidayForm');
+    const holidaySubmitBtn=document.getElementById('holidaySubmitBtn');
+    const holidayFormStatus=document.getElementById('holidayFormStatus');
+    const HOLIDAY_FORM_ENDPOINT='https://script.google.com/macros/s/AKfycbypFDtXHye6aqsthwKJrw0IKudNgFG4pUcuc_4xaQvy2hL4YKfEbMYKZsdUDmkVxf-Y/exec';
+
+    function showFormStatus(message,type){
+      holidayFormStatus.textContent=message;
+      holidayFormStatus.className='form-status show '+type;
+    }
+
+    holidayForm.addEventListener('submit',async e=>{
+      e.preventDefault();
+      if(!holidayForm.checkValidity()){
+        holidayForm.reportValidity();
+        return;
+      }
+
+      holidaySubmitBtn.disabled=true;
+      holidaySubmitBtn.textContent='Sending...';
+      holidayFormStatus.className='form-status';
+      holidayFormStatus.textContent='';
+
+      try{
+        const formData=new FormData(holidayForm);
+        const body=new URLSearchParams();
+        for(const [key,value] of formData.entries()) body.append(key,value);
+
+        await fetch(HOLIDAY_FORM_ENDPOINT,{
+          method:'POST',
+          mode:'no-cors',
+          headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},
+          body:body.toString()
+        });
+
+        showFormStatus('🎄 Thank you! Your holiday gift request has been sent. A member of our team will follow up with you soon.','success');
+        holidayForm.reset();
+      }catch(error){
+        console.error('Holiday form submission failed:',error);
+        showFormStatus('We could not send your request right now. Please try again or contact your Fusion4Branding account manager directly.','error');
+      }finally{
+        holidaySubmitBtn.disabled=false;
+        holidaySubmitBtn.textContent='Send Holiday Gift Request';
+      }
+    });
   </script>
 </body>
 </html>
