@@ -210,7 +210,7 @@
     const holidayForm=document.getElementById('holidayForm');
     const holidaySubmitBtn=document.getElementById('holidaySubmitBtn');
     const holidayFormStatus=document.getElementById('holidayFormStatus');
-    const HOLIDAY_FORM_ENDPOINT='https://script.google.com/macros/s/AKfycbypFDtXHye6aqsthwKJrw0IKudNgFG4pUcuc_4xaQvy2hL4YKfEbMYKZsdUDmkVxf-Y/exec';
+    const HOLIDAY_FORM_ENDPOINT='https://fusion4-holiday-contact.marketing-fusion4branding.workers.dev/submit';
 
     function showFormStatus(message,type){
       holidayFormStatus.textContent=message;
@@ -234,18 +234,26 @@
         const body=new URLSearchParams();
         for(const [key,value] of formData.entries()) body.append(key,value);
 
-        await fetch(HOLIDAY_FORM_ENDPOINT,{
+        const response=await fetch(HOLIDAY_FORM_ENDPOINT,{
           method:'POST',
-          mode:'no-cors',
           headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},
           body:body.toString()
         });
+
+        const result=await response.json().catch(()=>({
+          success:false,
+          message:'Unexpected response from the contact service.'
+        }));
+
+        if(!response.ok || !result.success){
+          throw new Error(result.message || 'Unable to send your request.');
+        }
 
         showFormStatus('🎄 Thank you! Your holiday gift request has been sent. A member of our team will follow up with you soon.','success');
         holidayForm.reset();
       }catch(error){
         console.error('Holiday form submission failed:',error);
-        showFormStatus('We could not send your request right now. Please try again or contact your Fusion4Branding account manager directly.','error');
+        showFormStatus(error.message || 'We could not send your request right now. Please try again or contact your Fusion4Branding account manager directly.','error');
       }finally{
         holidaySubmitBtn.disabled=false;
         holidaySubmitBtn.textContent='Send Holiday Gift Request';
